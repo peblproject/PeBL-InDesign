@@ -1,0 +1,247 @@
+/*
+Copyright 2020 Eduworks Corporation
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+*/
+
+.pebl__discussion--lightbox {
+    position: fixed;
+    top: 10vh;
+    left: 0;
+    right: 0;
+    min-height: 400px;
+    height: 80vh;
+    background-color: var(--background-light);
+    z-index: 5000;
+    max-width: 700px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    -webkit-box-shadow: var(--boxshadow-4);
+    box-shadow: var(--boxshadow-4);
+}
+
+.pebl__discussion--lightbox__textarea {
+    display: block;
+    box-sizing: border-box;
+    width: calc(100% - 1em);
+    max-width: 700px;
+    word-wrap: break-word;
+    height: 6em;
+    resize: vertical;
+    margin: .5em;
+    color: #222;
+    font-weight: normal;
+    padding: 0.5em;
+    font-size: 1.2em;
+    line-height: 1.5em;
+    border-radius: var(--container-radius);
+    border: .1em solid var(--background-light);
+}
+
+.pebl__discussion--lightbox__content {
+    display: flex;
+    background-color: var(--background-lighter);
+    flex-direction: column;
+    flex-grow: 1;
+    /* for Firefox */
+    min-height: 0;
+}
+
+.pebl__discussion--lightbox__header {
+    display: flex;
+    background-color: var(--secondary-color-light);
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    padding: 1em;
+    font-family: var(--font-family-secondary);
+}
+
+.discussionLightboxCloseButtonContainer {
+    width: 1em;
+    height: 1em;
+    font-size: 1.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.discussionInputBody {
+    display: flex;
+    flex-direction: column;
+    margin: 1em;
+    min-height: 135px;
+}
+
+.discussionButtonContainer {
+    display: flex;
+    flex-direction: row-reverse;
+    flex-shrink: 0;
+}
+
+.discussionResponseBody {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    flex-shrink: 500;
+    min-height: 0;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    font-family: "Helvetica Neue", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    border-top: 1px solid #aaa;
+    clear: both;
+    margin-top: 2em;
+}
+
+.discussionResponseBody .response {
+    position: relative;
+    padding: 1em 1em 1em 1em;
+    margin: 0;
+    background: none;
+}
+
+.discussionResponseBody .response i {
+    margin-left: -1.5em;
+}
+
+.discussionResponseBody .your.response .userId {
+    color: var(--primary-color);
+    font-weight: 600;
+
+}
+
+.discussionResponseBody .response .userId {
+    font-weight: 500;
+    font-size: 1.1em;
+}
+
+.discussionResponseBody .response .timestamp {
+    margin-left: .5em;
+    float:right;
+    /*    letter-spacing: .5em;*/
+    font-size: .8em;
+    color: var(--dark-font);
+}
+
+.discussionResponseBody .response .message {
+    font-style: normal;
+    font-weight: normal;
+    margin: .5em 0em 1em;
+}
+
+.discussionSubmitButton {
+    cursor: pointer;
+    -webkit-border-radius: var(--button-radius);
+    -moz-border-radius: var(--button-radius);
+    border-radius: var(--button-radius);
+    padding: .5rem 2rem .5rem 2rem;
+    text-decoration: none;
+    margin: 0rem 1em 1em 0em;
+    border: none;
+    background: var(--primary-color);
+    color: #ffffff;
+}
+
+/*OLD STUFF STARTS HERE*/
+.replyContainer {
+    display: block;
+}
+
+.replyTextArea {
+    flex-shrink: 0;
+    font-size: 1em;
+    width: calc(100% - 32px);
+    padding: 1em;
+    border: .1em solid var(--background-light);
+    border-radius: var(--container-radius);
+    margin-bottom: 1em;
+    height: 2em;
+}
+
+.messageReplyButton {
+    color:var(--primary-color-dark);
+    cursor: pointer;
+    float: right;
+    text-decoration: underline;
+}
+
+button.replySubmitButton {
+    float: right;
+}
+
+button.replyCloseButton {
+    cursor: pointer;
+    -webkit-border-radius: var(--button-radius);
+    -moz-border-radius: var(--button-radius);
+    border-radius: var(--button-radius);
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+    margin: 0em 1em 1em 1em;
+    float: right;
+    border: none;
+    color: #ffffff;
+    background:var(--secondary-color);
+}
+
+.chatReplies {
+    padding-top: 2em;
+    padding-left: .5rem;
+}
+.chatReplies>div.yourResponse,
+.chatReplies>div.response {
+    border-left: 2px solid var(--background-light);
+
+}
+
+.callout>button.chat {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: center;
+    padding-left: 2em;
+    background-image: none;
+    float: right;
+}
+
+.callout p {
+    font-weight: bolder;
+    font-style: italic;
+    margin: 0;
+    padding: 0;
+}
+
+button.chat>i {
+    font-size: 1.25em;
+    margin-right: 0.5em;
+}
+
+.messageDeleteButtonWrapper {
+    position: absolute;
+    top: 0;
+    right: 20px;
+}
+
+.messageDeleteButton {
+    font-size: 30px;
+    color: red;
+}
+
+.discussionDetailTextContainer {
+    padding-left: 1em;
+    font-family: var(--font-family-secondary);
+}

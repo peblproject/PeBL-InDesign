@@ -1,0 +1,155 @@
+#pebl__main-menu {
+    padding-left: 0;
+    padding-right: 0;
+    color: var(--primary-color);
+    position: fixed;
+    top: 0;
+    left: 0;
+    opacity: 1;
+    width: 100%;
+    z-index: 10;
+}
+
+#main-menu__collapsed {
+    cursor: pointer;
+    /*    padding: 0 1em;*/
+    max-height: 55px;
+    padding: 15px;
+    box-sizing: border-box;
+    /*overflow: hidden;*/
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#main-menu__collapsed li > a {
+    color: transparent;
+}
+
+#main-menu__collapsed > div {
+    display: flex;
+    justify-content: space-between;
+}
+
+#main-menu__collapsed > div > a {
+    flex-shrink: 0;
+}
+
+#main-menu__collapsed .collapsedMenuButtonProgramNameContainer {
+    margin-left: 1em;
+    overflow: hidden;
+}
+
+#main-menu__expanded {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    -webkit-box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+}
+
+#main-menu__hide {
+    opacity: 0.7;
+}
+
+#main-menu__hide:hover {
+    opacity: 1;
+}
+
+#pebl__main-menu li {
+    -webkit-transition: all .5s;
+    transition: all .5s;
+    display: block;
+}
+
+#pebl__main-menu li a:hover,
+#knowledgeNetworkButton:hover,
+#askAnExpertButton:hover,
+#tableOfContentsButton:hover {
+    color: var(--primary-color-light);
+}
+
+/* Distribute list items horizontally */
+#main-menu__expanded__top-bar {
+    padding: 1rem;
+    margin: 0;
+    padding-bottom: 1em;
+    text-align: justify;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/*#main-menu__expanded__top-bar:after {
+    content: '';
+    display: inline-block;
+    width: 100%;
+}
+
+#main-menu__expanded__top-bar:before {
+    content: '';
+    display: block;
+    margin-top: -1.25em;
+}*/
+
+#main-menu__expanded__top-bar li {
+    cursor: pointer;
+    display: inline-block;
+    margin-right: -.25em;
+    position: relative;
+    padding: 0;
+}
+
+#main-menu__expanded__content {
+    margin: auto;
+    padding: 1em;
+}
+
+
+#main-menu__expanded__content li {
+    margin-bottom: 1em;
+    list-style: none;
+}
+
+#main-menu__expanded__content a {
+    cursor: pointer;
+}
+
+#main-menu__expanded__column-1 {
+    width: 50%;
+    float: left;
+    /*    border: 1px dashed white;*/
+}
+
+#main-menu__expanded__column-2 {
+    margin-left: 15%;
+    /*    border: 1px dashed blue;*/
+}
+
+#pebl__main-menu,
+#main-menu__expanded {
+    background-color: var(--primary-color);
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+
+    #main-menu__expanded__column-1,
+    #main-menu__expanded__column-2 {
+        width: 100%;
+        float: none;
+        margin: 0;
+    }
+
+}
+
+#knowledgeNetworkButton,
+#askAnExpertButton,
+#tableOfContentsButton {
+    color: unset;
+    text-decoration: none;
+    cursor: pointer;
+}
+

@@ -1,0 +1,249 @@
+/*
+Copyright 2020 Eduworks Corporation
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+*/
+
+:root {
+    --primary-color: #07889B;
+    --primary-color-light: #5ab0be;
+    --primary-color-dark: #065c6a;
+
+    --secondary-color: #e37222;
+    --secondary-color-light: #eca06b;
+    --secondary-color-dark: #994d17;
+
+    --success-color: green;
+    --warning-color: orange;
+    --alert-color: red;
+
+    --background-lightest: #ffffff;
+    --background-lighter: #f5f5f5;
+    --background-light: #E8E8E8;
+    --background-darker: #969696;
+
+    --light-font: #FFFFFF;
+    --dark-font: #424242;
+    --font-family-primary: 'Rubik', sans-serif;
+    --font-family-secondary: 'Merriweather', serif;
+    
+    /* --logo-size: 24px; */
+    --side-border-size: 6px;
+
+    --transition-fast: 0.2s;
+    --transition-slow: 0.8s;
+
+    --border-radius: 4px;
+    --button-radius: var(--border-radius);
+    --container-radius: var(--border-radius);
+
+    --primary-button-text-color: var(--light-font);
+    --primary-button-color: var(--primary-color);
+    --secondary-button-text-color: var(--light-font);
+    --secondary-button-color: var(--secondary-color);
+
+    /* UTILITY SETTINGS - global shortcuts */
+
+    --spacing-xs: 0.33rem;
+    --spacing-s: 0.66rem;
+    --spacing: 1rem;
+    --spacing-m: 1.2rem;
+    --spacing-l: 2rem;
+
+    --header-size: 2.5rem;
+    --subheader-size: 2rem;
+
+    --border-radius-s: 0.25rem;
+    --border-radius-m: 0.66rem;
+    --border-radius-l: 1rem;
+
+    --boxshadow-1: 0 1px 1px 0 rgba(0, 0, 0, 0.14),
+        0 2px 1px -1px rgba(0, 0, 0, 0.12),
+        0 1px 3px 0 rgba(0, 0, 0, 0.20);
+    --boxshadow-2: 0 2px 2px 0 rgba(0, 0, 0, 0.14),
+        0 3px 1px -2px rgba(0, 0, 0, 0.12),
+        0 1px 5px 0 rgba(0, 0, 0, 0.20);
+    --boxshadow-3: 0 3px 4px 0 rgba(0, 0, 0, 0.14),
+        0 3px 3px -2px rgba(0, 0, 0, 0.12),
+        0 1px 8px 0 rgba(0, 0, 0, 0.20);
+    --boxshadow-4: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 
+        0 1px 10px 0 rgba(0, 0, 0, 0.12), 
+        0 2px 4px -1px rgba(0, 0, 0, 0.3);
+}
+
+* {
+    box-sizing: border-box
+}
+
+[hidden] {
+    display: none !important
+}
+[disabled] {
+    pointer-events:none; 
+    opacity: 0.3
+}
+
+.horizontal {
+    display: flex; 
+    flex-direction: row; 
+    justify-content: space-between
+}
+.vertical {
+    display: flex; 
+    flex-direction: column}
+
+.center {
+    justify-content: center; 
+    align-items: center
+}
+.flex {
+    flex: 1
+}
+
+html,
+body {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    font-family: var(--font-family-primary);
+}
+
+body {
+    margin: 0px 8px;
+}
+
+.title-1 {
+    font-family: var(--font-family-secondary);
+    font-size: 2.5rem;
+    color: var(--background-darker);
+}
+
+.title-2 {
+    font-family: var(--font-family-secondary);
+    font-size: 1.8rem;
+    line-height: 2rem;
+    color: var(--background-darker);
+}
+
+.title-3 {
+    font-family: var(--font-family-primary);
+    font-size: 1.2rem;
+    color: var(--dark-font);
+}
+
+.title-4 {
+    font-family: var(--font-family-primary);
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--dark-font);
+}
+
+/* BUTTONS */
+
+button,
+.button,
+input[type=button], 
+input[type=submit], 
+input[type=reset] {
+    cursor: pointer;
+    text-decoration: none;
+    font-family: var(--font-family-primary);
+    color: var(--primary-button-text-color);
+    background: var(--primary-button-color);
+    margin: 1px var(--spacing-xs);
+    padding: var(--spacing-s) var(--spacing-m);
+    border: var(--button-boarder);
+    -webkit-border-radius: var(--button-radius);
+    -moz-border-radius: var(--button-radius);
+    border-radius: var(--button-radius);
+    transition: var(--transition-fast);
+}
+
+button:hover,
+.button:hover,
+input[type=button]:hover, 
+input[type=submit]:hover, 
+input[type=reset]:hover {
+    background: var(--primary-color-dark);
+}
+
+/* Apply the .secondary class to all non-primary buttons in a group */
+button.secondary,
+.button.secondary,
+input[type=button].secondary, 
+input[type=submit].secondary, 
+input[type=reset].secondary  {
+    color: var(--secondary-button-text-color);
+    background: var(--secondary-button-color);
+}
+
+button.secondary:hover,
+.button.secondary:hover,
+input[type=button].secondary:hover, 
+input[type=submit].secondary:hover, 
+input[type=reset].secondary:hover {
+    background: var(--secondary-color-dark);
+}
+
+/* INPUTS */
+
+.textarea,
+textarea {
+    display: block;
+    margin: 1px 0;
+    padding: var(--spacing-s);
+    font-family: var(--font-family-secondary);
+    width: 100%;
+    height: 4em;
+    background-color: var(--background-lightest);
+    border: 1px solid var(--background-darker);
+    border-radius: var(--container-radius);
+}
+
+/* CONTENT WRAPPER */
+
+.callout {
+    display: inline-block;
+    padding: var(--spacing);
+    margin: var(--spacing-xs) 0;
+    background-color: var(--background-light);
+    border-radius: var(--container-radius);
+    /* border-left: var(--side-border-size) solid var(--primary-color); */
+    width: calc(100% - 3.5em);
+    clear: both;
+}
+
+.callout::after {
+    content: " ";
+    display: block;
+    height: 0;
+    clear: both;
+}
+
+/* MODAL DIALOG */
+
+.lightbox {
+    position: fixed;
+    top: 10vh;
+    left: 0;
+    right: 0;
+    min-height: 400px;
+    height: 80vh;
+    background-color: var(--background-light);
+    z-index: 5000;
+    max-width: 700px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    -webkit-box-shadow: var(--boxshadow-2);
+    box-shadow: var(--boxshadow-2);
+}

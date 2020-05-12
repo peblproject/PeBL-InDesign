@@ -1,0 +1,1516 @@
+/*
+Copyright 2020 Eduworks Corporation
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+*/
+
+#fake-page {
+    width: 100%;
+    height: calc(92vh - 50px);
+    position: fixed;
+    top: 40px;
+}
+
+.title {
+    font-size: 35px;
+
+    font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+    line-height: 40px;
+}
+
+.p {
+    font-size: 28px;
+    font-family: palatino, "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    line-height: 1.3;
+}
+
+p.discussionQuestionBoxText {
+    font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+}
+
+.contentFlexContainer {
+    flex-basis: 0;
+    flex-grow: 1;
+    flex-shrink: 1;
+}
+
+.contentContainerWrapper {
+    position: relative;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*top: 40%;
+    transform: translateY(-50%);*/
+}
+
+.contentContainer.flatBottom {
+    border-bottom-left-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+}
+
+.contentContainer,
+.peblSidebarExtendedFrame {
+    /*border-radius: 10px;*/
+    padding: 1em;
+    /*padding-left: 2em;
+    padding-right: 2em;
+    margin-left: 1em;
+    margin-right: 1em;*/
+    position: relative;
+    max-height: calc(86vh - 100px);
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    z-index: 10;
+    background-color: white;
+    max-width: 100%;
+    transition: all 0.5s ease;
+}
+
+.contentFlexContainer {
+    max-width: 100%;
+    transition: all 0.5s ease;
+}
+
+.contentInnerFlexContainer {
+    display: flex;
+    -webkit-box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+    margin-left: 1em;
+    margin-right: 1em;
+    border-radius: 10px;
+    max-height: 100%;
+    transition: all 0.5s ease;
+}
+
+.contentInnerFlexContainer.contractedVertical {
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    max-height: 0;
+}
+
+.contentContainer {
+    flex-basis: 0;
+    flex-grow: 1;
+    flex-shrink: 1;
+}
+
+.contentContainer {
+    word-break: break-word;
+}
+
+.contentContainer.contractedVertical {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0;
+}
+
+.contentContainer.contracted {
+    padding: 0;
+    margin: 0;
+    flex-shrink: 1000;
+    max-width: 0;
+    min-height: 0;
+    overflow: hidden;
+}
+
+.contentContainer .contentDetails {
+    font-family: Helvetica;
+}
+
+.peblOverlay {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    position: fixed;
+    z-index: 10000;
+    width: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: auto;
+    background-color: white;
+}
+
+.headerWrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+#uiBarDivider {
+    flex-basis: 100%;
+}
+
+.showCardTagsButton {
+    width: 100%;
+    color: white;
+    background-color: rgb(7, 126, 188);
+    border: none;
+    height: 2em;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.showCardTagsButton.hidden {
+    display: none;
+}
+
+.showCardTagsButton.contracted:after {
+    content: 'Show Tags';
+}
+
+.showCardTagsButton.expanded:after {
+    content: 'Hide Tags';
+}
+
+.cardTagContainer {
+    display: block;
+    margin-top: 1em;
+    overflow: hidden;
+}
+
+.cardTagContainer.contracted {
+    max-height: 0;
+}
+
+.cardTagContainer.expanded {
+    max-height: 100vh;
+}
+
+.cardTag {
+    color: white;
+    font-family: Helvetica;
+    border-radius: 5px;
+    display: inline-block;
+    cursor: pointer;
+    background: white !important;
+    margin: 3px 0px;
+}
+
+.cardTag.dei_assessment,
+.cardTag.targeted_audience {
+    background-color: #80cbc4;
+}
+
+.cardTag.dei_competency,
+.cardTag.approach_type {
+    background-color: #7986cb;
+}
+
+.cardTag.dei_activity,
+.cardTag.response_type {
+    background-color: #4dd0e1;
+}
+
+.cardTag.dei_issue_type,
+.cardTag.format {
+    background-color: #64b5f6;
+}
+
+.cardTag.dei_accountability,
+.cardTag.md_addiction {
+    background-color: #9ccc65;
+}
+
+.cardTag.dei_tool_or_resource {
+    background-color: #66bb6a;
+}
+
+.cardTag.resource {
+    background-color: #ef7747;
+}
+
+.peblSidebar {
+    font-family: Helvetica;
+    max-width: 0;
+    max-height: calc(86vh - 100px);
+    background: white;
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.5s ease;
+}
+
+.peblSidebar.expanded {
+    width: 100%;
+    max-width: 200px;
+}
+
+.peblSidebarExpandButton {
+    width: 2em;
+    /*height: calc(68vh - 60px);*/
+    background: rgb(7, 126, 188);
+    position: relative;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    flex-shrink: 0;
+    cursor: pointer;
+}
+
+.peblSidebarExpandButton.expanded:after {
+    content: '';
+    position: absolute;
+    left: 0.7em;
+    top: 50%;
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 10px solid white;
+    clear: both;
+}
+
+.peblSidebarExpandButton.contracted:after {
+    content: '';
+    position: absolute;
+    left: 0.7em;
+    top: 50%;
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-right: 10px solid white;
+    clear: both;
+}
+
+.peblSidebarExtendedFrame {
+    flex-grow: 100000;
+    min-height: 1em;
+}
+
+.peblSidebarExtendedFrame.contracted {
+    max-width: 0;
+    padding: 0;
+    margin: 0;
+}
+
+.peblSidebarExtendedFrame.contractedVertical {
+    min-height: 0;
+    max-height: 0;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
+.peblSidebarSearchContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 0 1em 6px;
+}
+
+.peblSidebarSearchField {
+    width: 100%;
+    border: 1px solid rgb(7, 126, 188);
+    padding: 4px;
+    font-size: 1rem;
+}
+
+.peblSidebarTagList {
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+}
+
+.sidebarTagHeader {
+    font-weight: bold;
+    padding: 1em 0 .5em .25em;
+}
+
+.sidebarTagContainer {
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    margin-right: 6px;
+}
+
+.sidebarTagElement {
+    cursor: pointer;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: .25em;
+    border: 1px solid #ddd;
+}
+
+.sidebarTagElement:hover {
+    background-color: rgba(7, 126, 188, 0.1);
+}
+
+.sidebarTagElement.active {
+    background: rgb(7, 126, 188);
+    color: white;
+}
+
+.sidebarTagText {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.sidebarTagCount {
+    margin-right: 5px;
+}
+
+.iconContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row-reverse;
+    position: relative;
+    float: left;
+    height: 50px;
+    width: auto;
+    display: none;
+    left: -150px;
+}
+
+.peblFooter {
+    display: block;
+    position: fixed;
+    z-index: 1000;
+    width: auto;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    height: 8vh;
+    background-color: white;
+}
+
+.footerIconContainer {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    bottom: 5px;
+}
+
+.footerIcon {
+    position: relative;
+    padding-bottom: 0;
+    font-size: 1.5rem;
+}
+
+
+@keyframes slideResourceButtonContainer {
+    from {
+        bottom: 100px;
+    }
+    to {
+        bottom: 5px;
+    }
+}
+
+
+/*Footer Buttons*/
+
+.findButtonContainer,
+.discussButtonContainer,
+.contributeButtonContainer,
+.notesButtonContainer {
+    white-space: nowrap;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.discussButtonContainer {
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+#discussCounter,
+#notesCounter {
+    margin-left: 0.5em;
+}
+
+.findButtonContainer {
+    margin-left: 10px;
+}
+
+.notesButtonContainer {
+    margin-right: 10px;
+}
+
+.addedResourcesButtonContainer.hidden {
+    bottom: 100px !important;
+    animation-name: slideResourceButtonContainer;
+    animation-duration: 0s;
+}
+
+.addedResourcesButtonContainer.expanded {
+    height: calc(68vh - 60px);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    margin-right: 0;
+}
+
+.addedResourcesButtonContainer {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(7, 126, 188);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    height: 2em;
+    margin-left: 1em;
+    margin-right: 1em;
+    position: relative;
+    bottom: 0;
+    z-index: 5;
+    text-align: center;
+    animation-name: slideResourceButtonContainer;
+    animation-duration: 0.5s;
+    transition: all 0.5s ease;
+}
+
+.findButton, .discussButton, .notesButton {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    -webkit-appearance: none;
+    width: 100%;
+    height: 100%;
+    color: rgb(7, 126, 188);
+    background-color: white;
+    text-shadow: none;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    padding: 10px !important;
+/*     box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3); */
+    z-index: 4999;
+}
+
+.findButton:hover, 
+.discussButton:hover, 
+.notesButton:hover {
+    background-color: rgba(7, 126, 188, 0.1);
+    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+}
+
+.findButton > div,
+.discussButton > div,
+.notesButton > div {
+    margin-left: 1em;
+}
+
+.findMenuContainer {
+    position: absolute;
+    background-color: rgb(7, 126, 188);
+    width: 100%;
+    height: 100%;
+    color: white;
+    z-index: 5000;
+    top: 0;
+    left: 0;
+    border-radius: 5px;
+}
+
+.findMenuList {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    list-style-type: none;
+    -webkit-padding-start: 5px;
+    font-size: 18px;
+    -webkit-margin-before: .0;
+    -webkit-margin-after: .0;
+    font-family: Helvetica;
+    display: table;
+}
+
+.findMenuListElement {
+    cursor: pointer;
+    display: table-row;
+}
+
+.findMenuListElementText {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.contributeButton {
+    -webkit-appearance: none;
+    width: 150px;
+    height: 40px;
+    color: white;
+    background-color: rgb(7, 126, 188);
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+    padding: 0 !important;
+}
+
+.addedResourcesButton {
+    -webkit-appearance: none;
+    height: 50px;
+    color: white;
+    background-color: transparent;
+    border: none;
+    border-radius: 10px;
+    font-size: 20px;
+    padding: 0 !important;
+}
+
+.addedResourcesBadgeContainer {
+    float: right;
+    height: 100%;
+    width: 35px;
+    background-color: rgba(0, 0, 0, 0.25);
+    text-align: center;
+}
+
+.addedResourcesBadge {
+    margin-right: 0.5rem;
+    margin-left: 0.5rem;
+    color: white;
+}
+
+
+
+.addedResourcesContainer {
+    text-align: left;
+    height: 90%;
+    background-color: white;
+    padding: 20px;
+    position: relative;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    border-radius: 5px;
+    -webkit-box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+    z-index: 500;
+}
+
+.addedResourcesContainer .tocPageTextWrapper {
+    margin-bottom: 2em;
+}
+
+
+
+
+
+/*Overlay Buttons*/
+
+.expandButtonContainerUnderlay {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+    float: left;
+    height: 50px;
+    width: 135px;
+    z-index: 3000;
+    background-color: inherit;
+}
+
+.expandButtonContainer {
+    position: relative;
+    float: left;
+    height: 40px;
+    width: 40px;
+    top: 5px;
+}
+
+i.expandButton {
+    font-size: 2rem;
+    color: rgb(7, 126, 188);
+    cursor: pointer;
+    position: relative;
+    height: auto;
+    width: 40px;
+    left: 10px;
+}
+
+.expandText {
+    position: relative;
+    float: left;
+    font-size: 19px;
+    line-height: 50px;
+    margin-left: 20px;
+    color: rgb(7, 126, 188);
+    font-family: "Helvetica Neue", sans-serif;
+}
+
+i#closeButton {
+    cursor: pointer;
+    margin-right: 20px;
+    font-size: 2rem !important;
+    color: #077ebc;
+    display: none;
+}
+
+.tocButton.hidden,
+.askButton.hidden,
+.searchButton.hidden {
+    display: none;
+}
+
+.tocButtonLabel,
+.askButtonLabel,
+.searchButtonLabel {
+    font-size: 19px;
+    position: relative;
+    padding-left: 10px;
+    color: rgb(7, 126, 188);
+    font-family: 'Helvetica Neue', sans-serif;
+}
+
+.tocButtonLabel.active,
+.askButtonLabel.active,
+.searchButtonLabel.active {
+    color: rgb(244, 123, 40) !important;
+}
+
+.tocButton.active,
+.askButton.active,
+.searchButton.active {
+    color: rgb(244, 123, 40) !important;
+}
+
+i.tocButton {
+    cursor: pointer;
+    position: relative;
+    width: 35px;
+    color: rgb(7, 126, 188);
+    font-size: 2rem;
+}
+
+.tocButtonContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    float: right;
+    height: 45px;
+    right: 20px;
+    margin-left: 1em;
+    margin-right: 1em;
+}
+
+.tocButtonContainer.active {
+    border-bottom: 3px solid rgb(7, 126, 188);
+}
+
+.searchButtonContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    float: right;
+    height: 45px;
+    right: 20px;
+    margin-left: 1em;
+    margin-right: 1em;
+}
+
+.searchButtonContainer.active {
+    border-bottom: 3px solid rgb(7, 126, 188);
+}
+
+i.searchButton {
+    cursor: pointer;
+    position: relative;
+    width: auto;
+    color: rgb(7, 126, 188);
+    font-size: 2rem;
+}
+
+.askButtonContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    float: right;
+    height: 45px;
+    right: 20px;
+    margin-right: 1em;
+    margin-left: 1em;
+}
+
+.askButtonContainer.active {
+    border-bottom: 3px solid rgb(7, 126, 188);
+}
+
+i.askButton {
+    cursor: pointer;
+    position: relative;
+    width: auto;
+    color: rgb(7, 126, 188);
+    font-size: 2rem;
+}
+
+.accountButtonContainer {
+    position: relative;
+    float: right;
+    margin-right: 1em;
+    margin-left: 0.5em;
+    height: 50px;
+    width: auto;
+}
+
+.accountIcon {
+    position: relative;
+    height: 36px;
+    top: 7px;
+}
+
+.accountName {
+    font-size: 20px;
+    position: relative;
+    margin-left: 0.5em;
+    top: -5%;
+}
+
+.accountLogoutButton {
+    display: none;
+    position: relative;
+    margin-left: 0.5em;
+    top: -10%;
+    font-size: 15px !important;
+}
+
+.peblNotificationButtonContainer {
+    position: relative;
+    float: right;
+    height: 45px;
+    right: 10px;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+}
+
+.peblNotificationButtonContainer.active {
+    border-bottom: 3px solid rgb(7, 126, 188);
+}
+
+i.peblNotificationButton {
+    cursor: pointer;
+    position: relative;
+    width: 30px;
+    height: auto;
+    top: 7px;
+    font-size: 2rem;
+    color: rgb(7, 126, 188);
+}
+
+.peblNotificationBadge {
+    position: absolute;
+    display: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    font-size: 12px !important;
+    font-family: "Helvetica Neue", sans-serif;
+    font-weight: bold;
+    color: white;
+    top: 5px;
+    left: 15px;
+    line-height: 20px;
+    text-align: center;
+    background: red;
+    z-index: 2000;
+}
+
+.helpButtonContainer {
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    float: right;
+    display: flex;
+}
+
+i.helpButton {
+    cursor: pointer;
+    font-size: 2rem;
+    color: rgb(7, 126, 188);
+}
+
+.feedbackButtonContainer {
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    float: right;
+    display: flex;
+    margin-right: 2em;
+}
+
+i.feedbackButton {
+    cursor: pointer;
+    font-size: 2rem;
+    color: rgb(7, 126, 188);
+}
+
+/*Overlay sections*/
+
+.helpContainer {
+    height: 85%;
+    overflow: auto;
+}
+
+.helpSectionHeading {
+    background-color: #ddd !important;
+    color: #444;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    text-shadow: none;
+    font-size: 20px;
+    border-radius: 0px;
+}
+
+.helpSectionHeading:hover {
+    background-color: #ddd !important;
+}
+
+.helpSectionHeading:after {
+    content: '\02795';
+    font-size: 13px;
+    color: #777;
+    float: right;
+    margin-left: 5px;
+}
+
+.helpSectionHeading.active:after {
+    content: '\2796';
+}
+
+.helpSectionBody {
+    display: none;
+    padding: 0 40px;
+}
+
+.askContainer,
+.registryContainer {
+    height: calc(93vh - 90px);
+    -webkit-box-shadow: rgba(0, 0, 0, 0.137255) 0px 4px 5px 0px, rgba(0, 0, 0, 0.117647) 0px 1px 10px 0px, rgba(0, 0, 0, 0.298039) 0px 2px 4px -1px;
+    box-shadow: rgba(0, 0, 0, 0.137255) 0px 4px 5px 0px, rgba(0, 0, 0, 0.117647) 0px 1px 10px 0px, rgba(0, 0, 0, 0.298039) 0px 2px 4px -1px;
+    width: 100%;
+    margin: 0;
+    position: relative;
+}
+
+.responsive-wrapper {
+    position: relative;
+    height: 100%;
+    -webkit-overflow-scrolling: touch;
+    overflow: auto;
+}
+
+.askFrame,
+.registryFrame {
+    /*  width: 100%;
+    height: 100%;
+    border: none;*/
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+.tocContainer {
+    flex-basis: 100%;
+    width: 100%;
+    height: calc(93vh - 90px);
+    position: relative;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    background-color: white;
+    z-index: 10001;
+    margin: 0;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.137255) 0px 4px 5px 0px, rgba(0, 0, 0, 0.117647) 0px 1px 10px 0px, rgba(0, 0, 0, 0.298039) 0px 2px 4px -1px;
+    box-shadow: rgba(0, 0, 0, 0.137255) 0px 4px 5px 0px, rgba(0, 0, 0, 0.117647) 0px 1px 10px 0px, rgba(0, 0, 0, 0.298039) 0px 2px 4px -1px;
+}
+
+.tocSection::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.tocSectionPrefix {
+    position: relative;
+    width: auto;
+    float: left;
+}
+
+.tocSectionPrefixText {
+    position: absolute;
+    height: auto;
+    width: 100%;
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 30px;
+    text-decoration: none;
+    color: rgb(7, 126, 188);
+}
+
+.tocSectionTitleTextWrapper {
+    position: relative;
+    padding-left: 40px;
+    width: auto;
+    float: left;
+}
+
+.tocSectionTitle {
+    padding: 10px;
+    clear: both;
+}
+
+.tocSectionTitleText {
+    font-family: "Helvetica Neue", sans-serif;
+    font-size: 30px;
+    text-decoration: none;
+    color: rgb(7, 126, 188);
+}
+
+.tocSubsectionTitle {
+    cursor: pointer;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    background-color: white;
+    width: 100%;
+    clear: both;
+}
+
+.tocSubsectionPrefix {
+    position: relative;
+    width: 10%;
+    float: left;
+}
+
+.tocSubsectionPrefixText {
+    position: absolute;
+    height: auto;
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 20px;
+    text-decoration: none;
+    color: rgb(7, 126, 188);
+    padding-left: 50px;
+}
+
+.tocSubsectionTitleTextWrapper {
+    width: auto;
+    padding-left: 120px;
+}
+
+.tocSubsectionTitleText {
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 20px;
+    text-decoration: none;
+    color: rgb(7, 126, 188);
+}
+
+.tocPage {
+    cursor: pointer;
+    background-color: white;
+    width: 100%;
+    clear: both;
+}
+
+.tocPage.header {
+    padding-top: 5px;
+}
+
+.tocPagePrefixWrapper {
+    position: relative;
+    width: 10%;
+    float: left;
+}
+
+.tocPagePrefix {
+    position: absolute;
+    height: auto;
+    width: 100%;
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 20px;
+    text-decoration: none;
+    color: rgb(7, 126, 188);
+    padding-left: 120px;
+}
+
+.tocPageIconWrapper {
+    position: relative;
+    width: 5%;
+    float: left;
+}
+
+.tocPageIcon {
+    position: absolute;
+    height: auto;
+    width: 20px;
+    margin-top: 4px;
+    padding-left: 142px;
+    color: rgb(115, 115, 115) !important;
+}
+
+.tocPageTextWrapper,
+.tocPageTextWrapperWide,
+.tocPageTextWrapperDynamic {
+    position: relative;
+    padding-left: 10px;
+    width: 90%;
+    float: left;
+}
+
+.tocPageTextWrapperWide {
+    width: auto;
+    padding-left: 180px;
+    padding-bottom: 5px;
+}
+
+.tocPageTextWrapperDynamic {
+    width: 60%;
+    padding-left: 180px;
+}
+
+.tocPageTextWrapper {
+    width: 80%;
+}
+
+.tocPageText {
+    font-family: "Helvetica Neue", sans-serif;
+    font-size: 20px;
+    text-decoration: none;
+    color: rgb(7, 126, 188);
+}
+
+.tocPageDeleteButtonWrapper {
+    position: relative;
+    width: auto;
+    float: right;
+    margin-right: 20px;
+}
+
+.tocPageDeleteButton {
+    position: relative;
+    cursor: pointer;
+    color: red;
+}
+
+.tocDeleteConfirmDialogContainer {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 25%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 300px;
+    height: 100px;
+    z-index: 15001;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 2px 10px 23px -2px rgba(0, 0, 0, 0.58);
+}
+
+.tocDeleteConfirmDialogText {
+    position: relative;
+    left: 25%;
+    top: 10px;
+}
+
+.tocDeleteCancelButton {
+    position: relative;
+    height: 50px;
+    width: 50%;
+    top: 30px;
+    left: 0;
+    background: transparent !important;
+    border: none;
+    border-top: 1px solid gray;
+    font-size: 17px;
+    color: gray;
+    margin: 0 !important;
+    padding: 0 !important;
+    text-shadow: none !important;
+    border-radius: 0 !important;
+}
+
+.tocDeleteConfirmButton {
+    position: relative;
+    height: 50px;
+    width: 50%;
+    right: 0;
+    top: 30px;
+    background: transparent !important;
+    border: none;
+    border-top: 1px solid gray;
+    border-left: 1px solid gray;
+    font-size: 17px;
+    color: rgb(7, 126, 188) !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    text-shadow: none !important;
+    border-radius: 0 !important;
+}
+
+.tocDeleteConfirmDialogOverlay {
+    position: fixed;
+    width: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 100%;
+    z-index: 15000;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.notificationsWrapper {
+    position: fixed;
+    width: 50vmin;
+    right: 10px;
+    top: 60px;
+    border-radius: 10px;
+    background: white;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.137255) 0px 4px 5px 0px, rgba(0, 0, 0, 0.117647) 0px 1px 10px 0px, rgba(0, 0, 0, 0.298039) 0px 2px 4px -1px;
+    box-shadow: rgba(0, 0, 0, 0.137255) 0px 4px 5px 0px, rgba(0, 0, 0, 0.117647) 0px 1px 10px 0px, rgba(0, 0, 0, 0.298039) 0px 2px 4px -1px;
+    z-index: 12000;
+}
+
+.notificationsContainer {
+    max-height: 50vmin;
+    position: relative;
+    background: white;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.notificationsClearButton {
+    position: relative;
+    text-align: center;
+    background-color: rgb(7, 126, 188);
+    padding-bottom: 1em;
+    padding-top: 1em;
+    color: white;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.notificationElementWrapper {
+    padding-left: 20px;
+    padding-right: 20px;
+    border-bottom: 1px solid gray;
+    cursor: pointer;
+}
+
+.notificationElement {
+    font-family: 'Helvetica Neue', sans-serif;
+}
+
+.notificationElementContentText {
+    color: rgb(7, 126, 188);
+}
+
+.notificationElementLocationText {
+    color: rgb(7, 126, 188);
+}
+
+.dynamicPageHeader {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 50px;
+    background-color: rgb(228, 228, 228);
+    height: 50px;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.137255) 0px 4px 5px 0px, rgba(0, 0, 0, 0.117647) 0px 1px 10px 0px, rgba(0, 0, 0, 0.298039) 0px 2px 4px -1px;
+    box-shadow: rgba(0, 0, 0, 0.137255) 0px 4px 5px 0px, rgba(0, 0, 0, 0.117647) 0px 1px 10px 0px, rgba(0, 0, 0, 0.298039) 0px 2px 4px -1px;
+}
+
+.dynamicPageHeaderLink {
+    position: relative;
+    left: 25px;
+    top: 15px;
+    text-decoration: none;
+    color: blue;
+    display: block;
+    overflow: hidden;
+    width: 85%;
+}
+
+.dynamicPage {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 100px;
+    bottom: 50px;
+    background-color: white;
+    height: calc(93vh - 125px);
+    -webkit-box-shadow: rgba(0, 0, 0, 0.137255) 0px 4px 5px 0px, rgba(0, 0, 0, 0.117647) 0px 1px 10px 0px, rgba(0, 0, 0, 0.298039) 0px 2px 4px -1px;
+    box-shadow: rgba(0, 0, 0, 0.137255) 0px 4px 5px 0px, rgba(0, 0, 0, 0.117647) 0px 1px 10px 0px, rgba(0, 0, 0, 0.298039) 0px 2px 4px -1px;
+}
+
+.dynamicPageFrame {
+    position: relative;
+    height: 99%;
+    border: none;
+    width: 100%;
+    margin: 0;
+}
+
+i.dynamicPageCloseButton, i.overlayCloseButton {
+    cursor: pointer;
+    position: fixed;
+    top: 80px;
+    right: 20px;
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+i.dynamicPageCloseButton {
+    top: 51px;
+}
+
+i.peblSidebarExtendedFrameCloseButton {
+    cursor: pointer;
+    position: absolute;
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 3rem;
+    font-weight: bold;
+    top: 0;
+    right: 10px;
+}
+
+i.overlayCloseButton {
+    z-index: 10001;
+}
+
+
+.hidden {
+    display: none !important;
+}
+
+.clearLayer {
+    position: fixed;
+    width: auto;
+    left: 0;
+    right: 0;
+    height: 100%;
+    background-color: transparent;
+    z-index: 499;
+}
+
+
+/*Tutorial*/
+
+.tutorialMessageContainer {
+    clear: both;
+    position: absolute;
+    width: 250px;
+    height: auto;
+    min-height: 100px;
+    background-color: rgb(7, 126, 188);
+    left: 0;
+    top: 60px;
+    border-radius: 10px;
+    z-index: 3001;
+}
+
+.tutorialMessage {
+    color: white;
+    padding: 10px;
+    font-style: normal;
+    font-variant-caps: normal;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: normal;
+    font-family: Helvetica;
+}
+
+.tutorialMessageCancelButton {
+    padding: 10px;
+    cursor: pointer;
+    position: relative;
+    bottom: 5px;
+    margin-left: 10px;
+    float: left;
+    color: white;
+    font-style: normal;
+    font-variant-caps: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: normal;
+    font-family: Helvetica;
+}
+
+.tutorialMessageNextButton {
+    padding: 10px;
+    cursor: pointer;
+    position: relative;
+    margin-right: 10px;
+    float: right;
+    bottom: 5px;
+    color: white;
+    font-style: normal;
+    font-variant-caps: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: normal;
+    font-family: Helvetica;
+}
+
+.tutorialMessageArrow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-left: 30px;
+    margin-top: -10px;
+    width: 0;
+    height: 0;
+    border-bottom: 10px solid rgb(7, 126, 188);
+    border-right: 10px solid transparent;
+    border-left: 10px solid transparent;
+}
+
+:root {
+    --modal-header: 1.4rem;
+} 
+.emailModal {
+    font-size: .9rem;
+    position: fixed;
+    top: 10vh;
+    left: 0;
+    right: 0;
+    background-color: var(--background-light);
+    z-index: 999999;
+    box-shadow: var(--boxshadow-2);
+    max-width: 700px;
+    border-radius: 10px !important;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    -webkit-box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+}
+.icon {
+    padding: .25rem .25rem;
+}
+.button {
+    cursor: pointer;
+}
+.emailModalHeader {
+    border-top-left-radius: 10px !important;
+    border-top-right-radius: 10px !important;
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--primary-color-light);
+    align-items: center;
+    color: #fff;
+    padding: 1em;
+    font-family: var(--font-family-secondary);
+}
+.emailModalHeaderText {
+    font-size: var(--modal-header);
+    font-family: var(--font-family-secondary);
+}
+.emailModalBody {
+    font-size: .95rem !important;
+    font-family: var(--font-family-primary);
+    overflow: auto;
+    font-weight: 300;
+    line-height: 1.4rem;
+    -webkit-overflow-scrolling: touch;
+    padding: 1rem;
+}
+.emailModalBody .emailModalDescription {
+    font-size: .95rem !important;
+}
+.emailModalInputContainer {
+    font-size: .95rem !important;
+    padding: .5rem 0rem;
+}
+.emailModalCloseButton {
+    width: 1em;
+    float:right;
+    color: black;
+    height: 1em;
+    font-size: 1.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.emailModalCheckboxContainer .input-label {
+    font-size: .8rem;
+}
+.emailModalInputContainer .input-label {
+    display:block;
+    font-weight: 400;
+    font-size: .8rem;
+}
+.emailModalInputContainer input {
+    padding: .25rem .5rem;
+    border-radius: var(--border-radius-s);
+     -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    height: 1.25rem;
+    outline: none;
+    font-size: 1rem;
+    font-weight: 300;
+    min-width: 16rem;
+    box-shadow: none;
+    border: 1px solid var(--background-darker);
+}
+.modal-actions button:hover {
+    background-color: var(--primary-color-light);
+}
+.modal-actions button:active {
+    background-color: var(--primary-color-dark);
+}
+.emailModalInputContainer input:focus {
+    border: 1.5px solid var(--primary-color-dark) !important;
+}
+.askExpertExpertsModalDescription {
+    padding: 1em;
+}
+.main-button {
+    background-color: rgb(7, 126, 188);
+    min-width: 160px;
+    height: 2rem;
+    border-radius: var(--border-radius-s);
+    color: white;
+    font-size: .9rem;
+    font-weight: 500;
+    margin-top: 1rem;
+}
+.modal-actions {
+    width: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+    flex-start: end;
+  
+}
+
+.askExpertExpertsModalDescription {
+    padding: 1em;
+}
+
+/*Overrides*/
+
+.discussionQuestionBoxText {
+    font-style: normal !important;
+}

@@ -1,0 +1,386 @@
+/* 
+NOTE: This file has been depreciated. 
+Copy any useful styles into the styles.scss in the ExtensionInserterIndesign repo 
+*/
+
+body {
+    font-family: sans-serif;
+    background-color: #545454;
+}
+
+.tooltipIcon {
+    margin-right: 1em;
+}
+
+.error {
+    margin-left: 1em;
+    color: red;
+}
+
+#insertPeblWindowTarget,
+#insertPeblWindow {
+    height: 100%;
+}
+
+#insertPeblWindow {
+    background-color: #545454;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    width: 100%;
+    z-index: 9999;
+}
+
+#insertPeblBackdrop {
+
+}
+
+#insertPeblWindow .imageSelectModal {
+    background-color: #FFF;
+    bottom: 15px;
+    display: none;
+    flex-direction: column;
+    margin: auto;
+    left: 5%;
+    right: 5%;
+    max-width: 600px;
+    position: fixed;
+    top: 45px;
+    width: 90%;
+    z-index: 9999;
+}
+
+#insertPeblWindow .imageSelectModal.active {
+    display: flex;
+}
+
+#insertPeblWindow .insertPeblWindowHeader,
+#insertPeblWindow .imageSelectHeader {
+    height: 40px;
+    width: 100%;
+    display: flex;
+    color: white;
+}
+
+#insertPeblWindow .insertPeblWindowHeader .insertPeblWindowHeaderTextContainer,
+#insertPeblWindow .imageSelectHeaderTextContainer {
+	display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+#insertPeblWindow .insertPeblWindowHeader .insertPeblWindowHeaderCloseButton,
+#insertPeblWindow .imageSelectHeaderCloseButton {
+	display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    cursor: pointer;
+}
+
+#insertPeblWindow .insertPeblWindowHeader .insertPeblWindowHeaderCloseButton:hover,
+#insertPeblWindow .imageSelectHeaderCloseButton:hover {
+	background-color: #dfdfdf;
+}
+
+#insertPeblWindow .insertPeblWindowBody,
+#insertPeblWindow .imageSelectBody {
+	width: 100%;
+	height: 100%;
+    overflow: auto;
+}
+
+#insertPeblWindow .imageSelectBody {
+
+}
+
+#insertPeblWindow .insertPeblWindowBody .insertPeblWindowExtensionSelect {
+
+}
+
+#insertPeblWindow .insertPeblWindowBody .insertPeblWindowExtensionSelect .insertPeblWindowExtensionSelectHeader {
+    padding-left: 1em;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    cursor: pointer;
+    color: white;
+    background-color: #545454;
+}
+
+#insertPeblWindow .insertPeblWindowBody .insertPeblWindowExtensionSelect .insertPeblWindowExtensionSelectHeader:hover,
+#insertPeblWindow .insertPeblWindowBody .insertPeblWindowExtensionSelect .insertPeblWindowExtensionSelectHeader.active {
+	background-color: #424242;
+}
+
+#insertPeblWindow .insertPeblWindowBody .insertPeblWindowExtensionSelect .insertPeblWindowExtensionSelectHeader:hover h1,
+#insertPeblWindow .insertPeblWindowBody .insertPeblWindowExtensionSelect .insertPeblWindowExtensionSelectHeader.active h1 {
+	color: white;
+}
+
+#insertPeblWindow .insertPeblWindowBody .insertPeblWindowExtensionSelect .insertPeblWindowExtensionSelectBody {
+
+}
+
+#insertPeblWindow .insertPeblWindowBody .insertPeblWindowExtensionSelect .insertPeblWindowExtensionSelectHeader.active ~ .insertPeblWindowExtensionSelectBody {
+	max-height: 5000px;
+	padding: 1em;
+	display: flex;
+	flex-direction: column;
+    color: white;
+}
+
+#insertPeblWindow .insertPeblWindowBody .insertPeblWindowExtensionSelect .insertPeblWindowExtensionSelectBody .form-group {
+	display: flex;
+	align-items: center;
+}
+
+#insertPeblWindow .insertPeblWindowBody .insertPeblWindowExtensionSelect .insertPeblWindowExtensionSelectBody .form-group input,
+#insertPeblWindow .insertPeblWindowBody .insertPeblWindowExtensionSelect .insertPeblWindowExtensionSelectBody .form-group div.error {
+	display: inline-block;
+}
+
+#insertPeblWindow .insertPeblWindowBody .insertPeblWindowExtensionSelect .insertPeblWindowExtensionSelectBody .form-group input,
+#insertPeblWindow .insertPeblWindowBody .insertPeblWindowExtensionSelect .insertPeblWindowExtensionSelectBody .form-group select,
+#insertPeblWindow .insertPeblWindowBody .insertPeblWindowExtensionSelect .insertPeblWindowExtensionSelectBody .form-group textarea {
+    background-color: #424242;
+    border: 1px solid #72777c;
+    border-radius: 3px;
+    padding: 5px;
+    color: white;
+}
+
+#insertPeblWindow .insertPeblWindowBody .insertPeblWindowExtensionSelect .insertPeblWindowExtensionSelectBody .form-group select {
+    max-width: 300px;
+}
+
+#insertPeblWindow .insertPeblWindowBody .insertPeblWindowExtensionSelect .insertPeblWindowExtensionSelectBody .form-group {
+	padding: 1em;
+}
+
+#insertPeblWindow .insertPeblWindowBody .insertPeblWindowExtensionSelect .insertPeblWindowExtensionSelectBody label {
+	font-weight: bold;
+	margin-right: 1em;
+}
+
+#insertPeblWindow .insertPeblWindowFooter,
+#insertPeblWindow .imageSelectFooter {
+    height: 60px;
+    background-color: #424242;
+    width: 100%;
+}
+
+#insertPeblWindow .insertPeblWindowFooter .insertPeblWindowFooterButton,
+#insertPeblWindow .insertPeblWindowFooter .previewPeblWindowFooterButton,
+#insertPeblWindow .imageSelectFooterButton {
+    background-color: transparent;
+    border-radius: 5px;
+    color: #eee;
+    padding: 12px 16px;
+    margin-right: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 8px;
+    float: right;
+    border: 1px solid #72777c;
+}
+
+#insertPeblWindow .imageSelectResetButton {
+    background: gray;
+    float: left;
+    margin-left: 5px;
+}
+
+#insertPeblWindow .insertPeblWindowFooter .removePeblWindowFooterButton {
+    background-color: transparent;
+    border-radius: 5px;
+    color: #eee;
+    padding: 12px 16px;
+    margin-left: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 8px;
+    float: left;
+    border: 1px solid #72777c;
+}
+
+#insertPeblWindow .insertPeblWindowFooter .insertPeblWindowFooterButton:disabled {
+	background-color: #72777c;
+}
+
+#insertPeblWindow .vue-select-image__wrapper {
+    columns: 3;
+}
+
+#insertPeblWindow .imageSelectPreview {
+    overflow: auto;
+    background: whitesmoke;
+    padding: 1em;
+    margin: 1em;
+    counter-reset: images;
+}
+
+.configSection .imageSelectPreview {
+    overflow: auto;
+    padding: 1em;
+    margin: 1em;
+    counter-reset: images;
+}
+
+#insertPeblWindow .imageSelectPreviewImageContainer {
+    display: inline-block;
+    position: relative;
+    margin: 2px;
+}
+
+.configSection .imageSelectPreviewImageContainer {
+    display: inline-block;
+    position: relative;
+    margin: 2px;
+}
+
+#insertPeblWindow .imageSelectPreview img {
+    max-width: 50px;
+    max-height: 50px;
+}
+
+.configSection .imageSelectPreview img {
+    max-width: 100px;
+    max-height: 100px;
+    margin: 0;
+}
+
+#insertPeblWindow .imageSelectPreviewImageContainer:after {
+    counter-increment: images;
+    content: "" counter(images) "";
+    position: absolute;
+    left: 0;
+    bottom: 5px;
+    border-radius: 20px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    padding-left: 7px;
+    padding-right: 7px;
+    background: #23282d;
+    color: white;
+    font-size: 10px;
+}
+
+.configSection .imageSelectPreviewImageContainer:after {
+    counter-increment: images;
+    content: "" counter(images) "";
+    position: absolute;
+    left: 5px;
+    bottom: 5px;
+    border-radius: 20px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    padding-left: 7px;
+    padding-right: 7px;
+    background: #23282d;
+    color: white;
+    font-size: 10px;
+}
+
+#insertPeblWindow .textareaArray {
+    counter-reset: textareas;
+}
+
+#insertPeblWindow .textareaArrayElementContainer {
+    display: block;
+    position: relative;
+    margin: 10px;
+}
+
+#insertPeblWindow .textareaArrayElementContainer:before {
+    counter-increment: textareas;
+    content: "" counter(textareas) "";
+    position: absolute;
+    left: 25px;
+    top: -10px;
+    border-radius: 20px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    padding-left: 7px;
+    padding-right: 7px;
+    background: #23282d;
+    color: white;
+    font-size: 10px;
+}
+
+#insertPeblWindow .textareaArrayElementContainer.hasControls:before {
+    counter-increment: textareas;
+    content: "" counter(textareas) "";
+    position: absolute;
+    left: 37px;
+    top: -10px;
+    border-radius: 20px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    padding-left: 7px;
+    padding-right: 7px;
+    background: #23282d;
+    color: white;
+    font-size: 10px;
+}
+
+#insertPeblWindow .textareaArrayElementContainer > .textareaDeleteButton,
+#insertPeblWindow .textareaArrayElementContainer > .textareaAddButton {
+    visibility: hidden;
+    background-color: transparent;
+    border: none;
+    color: #23282d;
+    padding: 12px 16px;
+    font-size: 16px;
+    cursor: pointer;
+    bottom: 10px;
+    position: relative;
+}
+
+#insertPeblWindow .textareaArrayElementContainer > .textareaDeleteButton:hover,
+#insertPeblWindow .textareaArrayElementContainer > .textareaAddButton:hover {
+    color: #9ea3a8;
+}
+
+#insertPeblWindow .textareaArrayElementContainer:nth-child(n+2) > .textareaDeleteButton {
+    visibility: visible;
+}
+
+#insertPeblWindow .textareaArrayElementContainer:last-child > .textareaAddButton {
+    visibility: visible;
+}
+
+#insertPeblWindow .no-flex-shrink {
+    flex-shrink: 0;
+}
+
+.peblExtension {
+	width: fit-content;
+}
+
+.peblExtension span.mce-object-iframe {
+	cursor: pointer;
+}
+
+.peblExtension span.mce-shim:hover {
+	background: #f1f1f1c4;
+}
+
+.peblExtension iframe {
+	padding: 0;
+	margin: 0;
+	width: 1px;
+	min-width: 400px;
+}
+
+
+.peblExtension[data-peblextension="hotword"] iframe {
+	min-width: 100px;
+}
+
+/*.peblExtension[data-peblextension="popout"] iframe {
+	min-width: 57px;
+}*/
+
+
+

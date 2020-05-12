@@ -1,0 +1,93 @@
+/*
+Copyright 2020 Eduworks Corporation
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+*/
+
+.showHideButton {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    min-width: 100%;
+    cursor: pointer;
+    -webkit-border-radius: 5;
+    -moz-border-radius: 5;
+    border-radius: 5px;
+    outline: none !important;
+    background-color: #ffffff;
+    color:var(--secondary-color);
+    text-decoration: none;
+    margin: .5em 0em;
+    border: none;
+    position: relative;
+    font-size: 2em;
+    padding: 0;
+    clear: both;
+    width: 40px;
+    height: 40px;
+    overflow: hidden; /* fix for Firefox */
+    break-inside: avoid-column;
+    -webkit-column-break-inside: avoid;
+}
+
+.showHideButton:active,
+.showHideButton:focus,
+.showHideButton:hover {
+    background-color: white !important;
+}
+
+.showHideButton.text i {
+    margin-left: 0;
+    text-align: left;
+}
+
+.showHideButton.text span {
+    margin-left: 1em;
+}
+
+.showHideButton.text {
+    padding: .5rem;
+    font-weight: 400;
+    height: auto;
+    background: #fff;
+    min-width: 100%;
+    text-align: left;
+    color:var(--secondary-color);
+    outline: none;
+    width: auto;
+    font-size: 1.2em;
+}
+.showHideButton.hiding {
+    color: var(--secondary-color-light) !important;
+    font-weight: 400 !important;
+    background-color: #fff !important;
+}
+
+.showHideButton.text:hover,
+.showHideButton.text:active,
+.showHideButton.text:focus {
+    text-decoration: none;
+    color: var(--secondary-color-dark);
+    background-color: #fff !important;
+    font-weight: 500;
+}
+
+.showHideButton.inline {
+    float: none !important;
+    margin-bottom: 0 !important;
+}
+
+.userToggled {
+    min-width: 100%;
+    padding: 0rem 0rem 1rem 0rem;
+}

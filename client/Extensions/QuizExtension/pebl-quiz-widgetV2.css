@@ -1,0 +1,106 @@
+/*
+Copyright 2020 Eduworks Corporation
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+*/
+
+.pebl__quiz {
+    border-left: var(--secondary-color) solid var(--side-border-size);
+    background-color: var(--background-lighter);
+    padding: .5em .5em .5em 2em;
+}
+
+.pebl__quiz>li {
+    font-family: var(--font-family-secondary);
+    color: var(--dark-font);
+    border-bottom: var(--background-darker) solid 1px;
+    padding: .5em 0;
+    display: list-item;
+    break-inside: avoid-column;
+    -webkit-column-break-inside: avoid;
+    vertical-align: top;
+    width: 100%;
+}
+
+.pebl__quiz .pebl__quiz--choices {
+    font-family: var(--font-family-primary);
+    margin: 1em 1em 0 -1em;
+    list-style-type: none;
+    padding: 0;
+    font-weight: normal;
+}
+
+.pebl__quiz .pebl__quiz--choices li {
+    cursor: pointer;
+    padding: .25em 1em;
+    padding-left: 2em;
+    margin: .25em 0em;
+    border-radius: var(--border-radius);
+}
+
+.pebl__quiz .pebl__quiz--choices li:before {
+    content: "\25A2";
+    margin-left: -1.5em;
+    display: block;
+    float: left;
+}
+
+.pebl__quiz .pebl__quiz--choices li:hover {
+    background-color: var(--background-darker);
+    color: var(--light-font);
+    box-shadow: var(--boxshadow-2);
+}
+
+.pebl__quiz .pebl__quiz--choices.reveal li.pebl__quiz--correct {
+    background-color: var(--success-color);
+    color: var(--light-font);
+}
+
+.pebl__quiz .pebl__quiz--choices.reveal.secondary li.pebl__quiz--correct {
+    background-color: var(--success-color) !important;
+    color: var(--light-font);
+}
+.pebl__quiz .pebl__quiz--choices.reveal li.pebl__quiz--correct:before {
+    content: "\2714" !important;
+}
+
+.pebl__quiz .pebl__quiz--choices li.pebl__quiz--wrong {
+    background-color: var(--alert-color);
+    color: var(--light-font);
+}
+.pebl__quiz .pebl__quiz--choices li.pebl__quiz--wrong:before {
+    content: "\2716" !important;
+}
+
+.pebl__quiz .pebl__quiz--feedback {
+    font-family: var(--font-family-primary);
+    color: var(--primary-color-dark);
+    font-style: italic;
+    margin-top: var(--spacing-s);
+}
+
+.questionPromptContainer {
+    position: relative;
+}
+
+.questionNumberSpan {
+    position: absolute;
+    left: -25px;
+}
+
+.quizScore {
+    font-family: var(--font-family-primary);
+    color: var(--primary-color-dark);
+    font-weight: bold;
+    font-style: italic;
+}

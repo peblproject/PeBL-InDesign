@@ -1,0 +1,153 @@
+* {
+  box-sizing: border-box;
+}
+div.widget-placeholder {
+  position: relative;
+  width: 400px;
+  color: #222;
+  font-size: 12px;
+  text-align: center;
+  font-family: Tahoma, Geneva, Arial, Helvetica, sans-serif;
+  padding: 1rem;
+  border: 2px dashed #aaa;
+  border-radius: 0.25em;
+  background-color: #eee;
+}
+div.widget-discussion {
+  text-align: left;
+  display: none;
+}
+div.widget-discussion .name {
+  width: 250px;
+}
+div.widget-discussion:before {
+  box-sizing: border-box;
+  content: "Share";
+  font-size: 1.25em;
+  font-weight: bold;
+  color: #aaa;
+  padding-top: 0.75em;
+  text-align: center;
+  display: block;
+  position: fixed;
+  top: 20px;
+  height: 40px;
+  right: 20px;
+  background-color: rgba(0, 0, 0, 0.05);
+  width: 80px;
+  border-radius: 8px;
+}
+div.widget-popout {
+  background-color: #ddd;
+  text-align: left;
+  display: none;
+}
+div.widget-figure {
+  height: 200px;
+  display: none;
+}
+div.widget-figure:before {
+  content: "fig. #";
+  box-sizing: border-box;
+  margin: 0;
+  padding: 1em;
+  font-weight: bold;
+  font-size: 1.25em;
+  text-align: left;
+  color: #aaa;
+  display: block;
+  position: fixed;
+  bottom: 0px;
+  left: 0;
+  height: 25%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.05);
+}
+div.widget-carousel {
+  height: 200px;
+  display: none;
+}
+div.widget-carousel:before {
+  content: "← \00a0 \00a0 \00a0 \00a0 \25CF \25CB \25CB \00a0 \00a0 \00a0 \00a0 →";
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0.75em;
+  font-weight: bold;
+  font-size: 1.5em;
+  text-align: center;
+  color: #aaa;
+  display: block;
+  position: fixed;
+  bottom: 0px;
+  left: 0;
+  height: 25%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.05);
+}
+div.widget-dataentry {
+  padding-top: 50px;
+  height: 200px;
+  display: none;
+}
+div.widget-dataentry:before {
+  content: " ";
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0.75em;
+  font-weight: bold;
+  font-size: 1.25em;
+  text-align: center;
+  color: #aaa;
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 2em;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.05);
+}
+div.widget-dataentry:after {
+  content: "Share";
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0.33em;
+  font-weight: bold;
+  font-size: 1.25em;
+  text-align: center;
+  color: #aaa;
+  display: block;
+  position: fixed;
+  bottom: 10%;
+  height: 2em;
+  width: 90%;
+  border-radius: 1000px;
+  background-color: rgba(0, 0, 0, 0.05);
+}
+div.widget-quiz {
+  height: 200px;
+  display: none;
+}
+div.widget-quiz:before {
+  content: "\2714";
+  display: block;
+  position: fixed;
+  font-size: 3em;
+  color: #ccc;
+}
+div.widget-contentmorphing {
+}
+div.widget-askExpert {
+  display: none;
+}
+div.widget-externalResources {
+  display: none;
+}
+div.widget-dataentrypoll {
+  display: none;
+}
+div.widget-dataentrytext {
+  display: none;
+}
+div.widget-showHide {
+  display: none;
+}

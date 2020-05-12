@@ -1,0 +1,62 @@
+.notificationBadge {
+    position: absolute;
+    display: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    font-size: 12px !important;
+    font-family: "Helvetica Neue", sans-serif;
+    font-weight: bold;
+    color: white;
+    top: 5px;
+    left: 25px;
+    line-height: 20px;
+    text-align: center;
+    background: red;
+    z-index: 2000;
+}
+
+.notificationsWrapper {
+    position: fixed;
+    width: 50vmin;
+    right: 10px;
+    top: 60px;
+    border-radius: 10px;
+    background: white;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.137255) 0px 4px 5px 0px, rgba(0, 0, 0, 0.117647) 0px 1px 10px 0px, rgba(0, 0, 0, 0.298039) 0px 2px 4px -1px;
+    box-shadow: rgba(0, 0, 0, 0.137255) 0px 4px 5px 0px, rgba(0, 0, 0, 0.117647) 0px 1px 10px 0px, rgba(0, 0, 0, 0.298039) 0px 2px 4px -1px;
+    z-index: 12000;
+    display: flex;
+    flex-direction: column;
+}
+
+.notificationsContainer {
+    max-height: 50vmin;
+    position: relative;
+    background: white;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.notificationsClearButton {
+    position: relative;
+}
+
+.notificationElementWrapper {
+    padding-left: 20px;
+    padding-right: 20px;
+    border-bottom: 1px solid gray;
+    cursor: pointer;
+}
+
+.notificationElement {
+    font-family: 'Helvetica Neue', sans-serif;
+}
+
+.notificationElementContentText {
+    color: rgb(7, 126, 188);
+}
+
+.notificationElementLocationText {
+    color: rgb(7, 126, 188);
+}

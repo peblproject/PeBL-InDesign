@@ -1,0 +1,233 @@
+/*
+Copyright 2020 Eduworks Corporation
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+*/
+
+.externalResourcesModal {
+    position: fixed;
+    top: 10vh;
+    left: 0;
+    right: 0;
+    min-height: 400px;
+    height: 80vh;
+    background-color: var(--background-light);
+    z-index: 5000;
+    box-shadow: var(--boxshadow-2);
+    max-width: 700px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    -webkit-box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+}
+
+.externalResourcesModalHeader {
+    display: flex;
+    background-color: var(--primary-color-light);
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+    padding: 1em;
+    font-size: 1rem;
+    font-family: var(--font-family-secondary);
+}
+
+.externalResourcesModalCloseButton {
+    width: 1em;
+    height: 1em;
+    font-size: 1.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.externalResourcesModalBody {
+    overflow: auto;
+    padding: 1em;
+}
+
+.externalResourceIconWrapper {
+    position: relative;
+    float: left;
+}
+
+.externalResourceIcon {
+    position: relative;
+    height: auto;
+    width: 20px;
+    opacity: 0.33;
+}
+
+.responsive-wrapper {
+    position: relative;
+    height: 100%;
+    -webkit-overflow-scrolling: touch;
+    overflow: auto;
+}
+
+.dynamicPageHeader {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 50px;
+    background-color: var(--primary-color-light);
+    color: white;
+    height: 50px;
+}
+
+.dynamicPageHeaderLink {
+    box-sizing: border-box;
+    position: relative;
+    left: 1em;
+    top: 15px;
+    width: 80%;
+    display: block;
+    text-decoration: none;
+    font-family: sans-serif;
+    color: white;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    opacity: 0.33;
+}
+
+.dynamicPageHeaderLink:before {
+    content: "Source: ";
+    font-weight: bold;
+}
+
+.dynamicPageHeaderLink:hover {
+    opacity: 1;
+}
+
+.dynamicPage {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 100px;
+    z-index: 5000;
+    bottom: 0;
+    background-color: white;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.137255) 0px 4px 5px 0px, rgba(0, 0, 0, 0.117647) 0px 1px 10px 0px, rgba(0, 0, 0, 0.298039) 0px 2px 4px -1px;
+    box-shadow: rgba(0, 0, 0, 0.137255) 0px 4px 5px 0px, rgba(0, 0, 0, 0.117647) 0px 1px 10px 0px, rgba(0, 0, 0, 0.298039) 0px 2px 4px -1px;
+}
+
+.dynamicPageFrame {
+    position: relative;
+    height: 99%;
+    border: none;
+    width: 100%;
+    margin: 0;
+}
+
+i.dynamicPageCloseButton {
+    cursor: pointer;
+    position: fixed;
+    top: 65px;
+    right: 20px;
+    color: white;
+    font-size: 2em;
+}
+
+.externalResourcesButton {
+    background-color: var(--primary-color) !important;
+    width: 240px;
+    margin-top: .5rem;
+    padding: .5rem;
+    font-weight: 500;
+    border: none;
+    color: #fff !important;
+    cursor: pointer;
+    text-align: center;
+}
+
+.externalResourcesButton:hover {
+    background-color: var(--primary-color-dark) !important;
+}
+
+.externalResource {
+    cursor: pointer;
+}
+
+.externalResource:hover {
+    color: var(--secondary-color-light) !important;
+}
+
+.externalResourcesAddResourceModal {
+    position: fixed;
+    top: 10vh;
+    left: 0;
+    right: 0;
+    background-color: var(--background-light);
+    z-index: 5000;
+    box-shadow: var(--boxshadow-2);
+    max-width: 700px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    -webkit-box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+}
+
+.externalResourcesAddResourceModalHeader {
+    display: flex;
+    background-color: var(--primary-color-light);
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+    padding: 1em;
+    font-size: 1rem;
+    font-family: var(--font-family-secondary);
+}
+
+.externalResourcesAddResourceModalBody {
+    padding: 1em;
+    font-family: var(--font-family-secondary);
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.externalResourcesAddResourceModalBody p {
+    padding-bottom: 1em;
+    font-family: var(--font-family-secondary);
+}
+
+.externalResourcesAddResourceModalSuccess {
+    display: none;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: 1em;
+}
+
+.externalResourcesAddResourceModalCloseButton {
+    width: 1em;
+    height: 1em;
+    font-size: 1.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.AddResources_inputContainer {
+    margin: 1em 0;
+}
+
+.AddResources_inputContainer input {
+    box-sizing: border-box;
+    padding: 0.5em;
+    margin: 0.5em 0;
+    width: 100%;
+}

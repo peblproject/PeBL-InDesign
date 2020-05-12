@@ -1,0 +1,36 @@
+.peblIndesign-placeholderImage {
+	display: none !important;
+}
+
+.peblIndesign-extension {
+	height: unset !important;
+    overflow: unset !important;
+    width: unset !important;
+    display: unset !important;
+}
+
+.peblIndesign-extension > div {
+	width: unset !important;
+	transform-origin: unset !important;
+	transform: unset !important;
+	height: unset !important;
+	-webkit-transform-origin: unset !important;
+	-webkit-transform: unset !important;
+}
+
+.widget-placeholder {
+	display: none !important;
+}
+
+.peblExtensionPreviewImage {
+	display: none !important;
+}
+
+.content-morphing-block {
+	width: 100% !important;
+}
+
+i.peblExtension {
+	display: block;
+	height: calc(70vh - 190px);
+}

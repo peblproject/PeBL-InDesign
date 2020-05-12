@@ -1,0 +1,531 @@
+/*
+Copyright 2020 Eduworks Corporation
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+*/
+
+.dataEntryWrapper {
+    /* max-height: calc(70vh - 105px); */
+    break-inside: avoid-column;
+    padding: 1rem 0rem;
+    -webkit-column-break-inside: avoid;
+}
+
+.dataEntryCfiPlaceholder {
+    margin: 0 !important;
+    padding: 0 !important;
+    color: transparent !important;
+    font-size: 1px !important;
+    line-height: 0 !important;
+}
+
+.dataEntryCallout,
+.dataEntrySubFormCallout {
+    background-color: var(--background-lighter);
+    width: calc(100% - 2px);
+    margin: 0;
+    clear: both;
+    /*max-height: calc(70vh - 105px);*/
+    overflow: hidden;
+    /* fix for Firefox */
+    break-inside: avoid-column;
+    -webkit-column-break-inside: avoid;
+    display: flex;
+    flex-direction: column;
+    -webkit-transform: translateX(0); /*fix safari rendering*/
+}
+
+.dataEntryCallout.edit input[type="radio"] {
+    display: inline-block;
+}
+
+.dataEntryCallout input[type="radio"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    position: relative;
+    border: 2px solid var(--secondary-color-dark);
+    background-color: transparent;
+    color: var(--light-font);
+    height: 2em;
+    width: 2em;
+    border-radius: 1000px;
+    cursor: pointer;
+    outline: none;
+    margin-right: 7px;
+    transition: all var(--transition-fast);
+}
+
+.dataEntryCallout input[type="radio"]:hover {
+    background-color: var(--secondary-color-dark);
+}
+
+.dataEntryCallout input[type="radio"]:checked {
+    background-color: var(--secondary-color-dark);
+}
+
+.dataEntryCallout input[type="radio"]:checked::before {
+    content: '\02143';
+    position: absolute;
+    font: 1em/1 'Open Sans', sans-serif;
+    left: 8px;
+    top: 5px;
+    transform: rotate(40deg);
+}
+
+.dataEntryTableContainer table input[type="radio"] {
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.dataEntryCallout::after {
+    content: " ";
+    display: block;
+    height: 0;
+    clear: both;
+}
+
+.dataEntryCallout .unofficialView,
+.dataEntryCallout .officialView,
+.dataEntryCallout .privateView,
+.dataEntryCallout .teamView,
+.dataEntryCallout .classView,
+.dataEntryCallout .edit {
+    display: none;
+}
+
+.dataEntryCallout.privateViewMode .privateView,
+.dataEntryCallout.teamViewMode .teamView,
+.dataEntryCallout.classViewMode .classView,
+.dataEntryCallout.unofficialViewMode .unofficialView,
+.dataEntryCallout.officialViewMode .officialView,
+.dataEntryCallout.editMode .edit {
+    display: block;
+    /* font-family: var(--font-family-secondary); */
+}
+
+.dataEntryCallout.editMode .dataEntryEditModeButton,
+.dataEntryCallout.unofficialViewMode .dataEntryViewModeButton,
+.dataEntryCallout.officialViewMode .dataEntryOfficialModeButton,
+.dataEntryCallout.privateViewMode .dataEntryPrivateViewModeButton,
+.dataEntryCallout.teamViewMode .dataEntryTeamViewModeButton,
+.dataEntryCallout.classViewMode .dataEntryClassViewModeButton {
+    color: var(--light-font);
+    background: var(--secondary-color-light);
+}
+
+.dataEntryCallout p {
+    font-weight: 600;
+    font-size: 1.1em;
+    font-family: var(--font-family-secondary);
+    margin: 0;
+    padding: 0;
+}
+
+.dataEntryHeader {
+    font-size: .9em;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: var(--dark-font);
+    order: 1;
+}
+
+.dataEntryHeader > div {
+    width: 100%;
+    background: var(--background-light);
+    text-align: center;
+    padding: var(--spacing-xs);
+    cursor: pointer;
+}
+
+.dataEntryHeader > div:hover {
+    background: var(--secondary-color-dark) !important;
+    color: var(--light-font);
+}
+
+.dataEntryHeader > div.active {
+    background: var(--primary-color-light) !important;
+    color: var(--light-font);
+}
+
+.dataEntryFooter > button:hover {
+    background: var(--primary-color-dark);
+}
+
+.dataEntryCallout form {
+    max-height: calc(70vh - 192px);
+    overflow: auto;
+    order: 2;
+    min-height: 80px;
+}
+
+.dataEntryCallout form.fixScrolling,
+.dataEntrySubFormCallout form.fixScrolling {
+    will-change: transform;
+}
+
+.dataEntryCallout textarea,
+.dataEntryCallout textarea:active {
+    /* background-color: var(--background-light);
+    overflow: auto;
+    outline: none;
+    border: none;
+    font-size: .9em;
+    font-weight: 300; */
+}
+
+.dataEntryCallout form > .textBox,
+.dataEntryCallout form > .dataEntryTableContainer,
+.dataEntrySubFormCallout form > .textBox,
+.dataEntryCallout form > .dataEntryHeaderEntry,
+.dataEntryCallout form > .dataEntryCheckboxContainer {
+    padding: 0 var(--spacing);
+    margin-bottom: var(--spacing);
+}
+
+.dataEntryCallout form > p,
+.dataEntrySubFormCallout form > p {
+    padding: 1em;
+}
+
+.dataEntryFooter {
+    /* background-color: #fff; */
+    border-top: 1px solid var(--background-darker);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    min-height: 10px;
+    margin-top: var(--spacing-s);
+    padding: var(--spacing-s);
+    order: 3;
+}
+
+.dataEntryFooter > button {
+    width: 100%;
+    color: white;
+    background: var(--primary-color);
+    padding: 0.5em 0em;
+    margin: .5em;
+    border: none;
+    font-size: .9em;
+    cursor: pointer;
+}
+
+.textInput label {
+    display: block;
+    margin: 1em 0 0 0;
+    font-weight: 400;
+    font-size: .9rem;
+    font-family: var(--font-family-secondary);
+}
+
+.textInput textarea {
+    /* font-family: var(--font-family-secondary);
+    margin: .5em 0;
+    width: 100%;
+    height: 3em;
+    display: inline-block; */
+}
+
+.textResponses {
+    display: block;
+    max-height: 280px;
+    box-sizing: border-box;
+    padding: 0;
+    margin-top: 1em;
+    margin-left: -1em;
+    margin-right: -1em;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    font-family: var(--font-family-secondary);
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    clear: both;
+}
+
+.dataEntryTextResponseNoData {
+    margin-top: 1em !important;
+    margin-left: 2em !important;
+    margin-bottom: 1em !important;
+}
+
+.textResponses > .response:not([style*="display: none"]) ~ .dataEntryTextResponseNoData {
+    display: none;
+}
+
+.textResponses .response,
+.dataEntryCheckboxContainer .response {
+    position: relative;
+    padding: .8em 1em .5em 3em;
+    margin: 0;
+    background: #eee;
+    border-bottom: 1px solid #ddd;
+}
+
+.textResponses .response > i,
+.dataEntryCheckboxContainer .response > i {
+    position: absolute;
+    left: 0.5em;
+    font-size: 1.5em;
+}
+
+.textResponses .showMore {
+    display: block;
+    padding: 1em;
+    padding-left: 80px;
+    margin: 0;
+    font-style: italic;
+}
+
+.textResponses .your.response,
+.dataEntryCheckboxContainer .your.response {
+    background-color: var(--background-light);
+}
+
+.textResponses .response .userId,
+.dataEntryCheckboxContainer .response .userId {
+    font-weight: bold;
+}
+
+.textResponses .response .timestamp,
+.dataEntryCheckboxContainer .response .timestamp {
+    margin-left: .5em;
+    /*    letter-spacing: .5em;*/
+    font-size: .75em;
+    color: #999;
+}
+
+.textResponses .response .message,
+.dataEntryCheckboxContainer .response .message {
+    font-style: normal;
+    font-family: var(--font-family-secondary);
+    font-weight: normal;
+    margin: .5em 0;
+}
+
+.dataEntryCheckboxContainer {
+    display: flex;
+    align-items: center;
+    /* border-top: 1px solid #ddd; */
+    /* border-bottom: 1px solid #ddd; */
+    justify-content: space-between;
+    /*    background: rgba(0, 168, 142, 0.2);*/
+    /*    margin-bottom: 5px;*/
+}
+
+.dataEntryCheckboxContainer > span {
+    padding: 0.5em;
+    width: 100%;
+}
+
+.dataEntryCheckboxContainer > input[type="checkbox"] {
+    will-change: transform;
+    -ms-transform: scale(1.5);
+    -moz-transform: scale(1.5);
+    -webkit-transform: scale(1.5);
+    -o-transform: scale(1.5);
+    transform: scale(1.5);
+    padding: 10px;
+    margin: 1em;
+}
+
+.dataEntryCheckboxResponseContainer {
+    padding: 0.5em;
+    max-width: 50%;
+    font-family: var(--font-family-secondary);
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    flex-shrink: 0;
+}
+
+.dataEntryCheckboxResponseContainer > span {
+    display: block;
+}
+
+.dataEntryDropdownContainer {
+    padding-left: 1em;
+    padding-right: 1em;
+    margin-bottom: 1em;
+}
+
+.dataEntryDropdownContainer select {
+    max-width: 90%;
+    margin-left: 1em;
+}
+
+.dataEntryDropdownContainer .textResponses {
+    margin-top: 2em;
+}
+
+.dataEntrySubFormCallout {
+    display: none;
+    position: fixed;
+    background-color: var(--background-light);
+    top: 60px;
+    left: 0;
+    max-height: calc(100% - 70px);
+    overflow: auto;
+}
+
+.dataEntryMultiChoiceContainer {
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+.dataEntryMultiChoiceButtonsContainer {
+    display: flex;
+    flex-direction: column;
+    font-family: var(--font-family-secondary);
+}
+
+
+.dataEntryMultiChoiceButton {
+    margin: 1px 0;
+    padding: 1em;
+    text-align: left;
+    background: var(--background-darker);
+}
+
+.dataEntryMultiChoiceButton.active {
+    background: var(--secondary-color-light);
+    color: var(--light-font);
+}
+
+.dataEntryMultiChoiceButton:hover {
+    background: var(--secondary-color);
+    color: white;
+}
+
+.dataEntryMultiChoiceResponse {
+    margin: 0.5em;
+}
+
+.dataEntryMultiChoiceResponseContent {
+    display: flex;
+}
+
+.dataEntryMultiChoiceResponseTextContainer {
+    width: 50%;
+}
+
+.dataEntryMultiChoiceResponseGraphContainer {
+    width: 50%;
+    padding-left: 1em;
+    box-sizing: border-box;
+}
+
+.dataEntryMultiChoiceResponseGraphParentBar {
+    background: rgba(0, 0, 0, 0.1);
+    width: 100%;
+    height: 1em;
+    position: relative;
+    border-radius: 1000px;
+}
+
+.dataEntryMultiChoiceResponseGraphFillBar {
+    background: var(--secondary-color);
+    height: 100%;
+    width: 0;
+    float: right;
+    border-radius: 1000px;
+    transition: width 0.5s ease;
+}
+
+.dataEntryMultiChoiceResponseCount {
+    margin-left: 1em;
+}
+
+.pollingWindow {
+    background: var(--background-light);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 1em;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+.pollingWindow > .dataEntryCallout {
+    width: 100% !important;
+    font-family: var(--font-family-secondary);
+}
+
+.pollingWindow form > p {
+    font-weight: bold;
+    font-size: 1.2em;
+    font-family: var(--font-family-secondary);
+}
+
+.pollingWindow .dataEntryMultiChoiceButton {
+    font-size: 1em;
+    font-weight: bold;
+    padding: 1em;
+}
+
+.pollingWindow .dataEntryFormSubmit {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.dataEntryMultiChoicePrompt {
+    /* line-height: 1.2em;
+    padding-bottom: 0.5em;
+    padding-top: 0.5em;
+    margin-bottom: 0.5em;
+    font-size: 1.2em;
+    border-bottom: solid .5px var(--background-darker); */
+}
+
+.pollingWindow .dataEntryCallout {
+    max-height: calc(100vh - 105px);
+}
+
+.pollingWindow .dataEntryCallout form {
+    max-height: calc(100vh - 192px);
+}
+
+.showInlineMakeOfficial .inlineMakeOfficialContainer {
+    display: flex;
+    align-items: center;
+}
+
+.inlineMakeOfficialContainer {
+    display: none;
+    color: var(--primary-color);
+}
+
+.dataEntryTableContainer table th {
+    font-weight: 500;
+    font-family: var(--font-family-secondary);
+    font-size: .9em;
+    color: var(--background-darker);
+    text-align: center;
+    padding: 0.5em;
+}
+
+.dataEntryTableContainer table td {
+    background: transparent;
+    text-align: center;
+    padding: 0.5em;
+}

@@ -1,0 +1,138 @@
+/*
+Copyright 2020 Eduworks Corporation
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+*/
+
+.registryContainer {
+    height: 100%;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.137255) 0px 4px 5px 0px, rgba(0, 0, 0, 0.117647) 0px 1px 10px 0px, rgba(0, 0, 0, 0.298039) 0px 2px 4px -1px;
+    box-shadow: rgba(0, 0, 0, 0.137255) 0px 4px 5px 0px, rgba(0, 0, 0, 0.117647) 0px 1px 10px 0px, rgba(0, 0, 0, 0.298039) 0px 2px 4px -1px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 5000;
+}
+
+.responsive-wrapper {
+    position: relative;
+    height: 100%;
+    -webkit-overflow-scrolling: touch;
+    overflow: auto;
+}
+
+.registryFrame {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+#main-menu__collapsed li {
+    background-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+#main-menu__expanded__content .fa {
+    color:var(--primary-color);
+}
+#main-menu__expanded__content .fa:hover {
+    color:var(--primary-color-light) !important;
+}
+#main-menu__expanded__content .fa-inverse {
+    color: #fff;
+}
+#main-menu__expanded__content .fa:hover .fa-inverse {
+    color:var(--primary-color-dark) !important;
+    
+}
+
+.registryCloseButton {
+    position: fixed;
+    top: 0.25em;
+    right: 1em;
+    z-index: 5001;
+    font-size: 2em;
+    cursor: pointer;
+}
+
+.knowledgeNetworkAddResourceModal {
+    position: fixed;
+    top: 10vh;
+    left: 0;
+    right: 0;
+    background-color: var(--background-light);
+    z-index: 5000;
+    box-shadow: var(--boxshadow-2);
+    max-width: 700px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    -webkit-box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+}
+
+.knowledgeNetworkAddResourceModalHeader {
+    display: flex;
+    background-color: var(--primary-color-light);
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+    padding: 1em;
+    font-size: 1rem;
+    font-family: var(--font-family-secondary);
+}
+
+.knowledgeNetworkAddResourceModalBody {
+    padding: 1em;
+    font-family: var(--font-family-secondary);
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+knowledgeNetworkAddResourceModalBody p {
+    padding-bottom: 1em;
+    font-family: var(--font-family-secondary);
+}
+
+.knowledgeNetworkAddResourceModalSuccess {
+    display: none;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: 1em;
+}
+
+.knowledgeNetworkAddResourceModalCloseButton {
+    width: 1em;
+    height: 1em;
+    font-size: 1.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.AddResources_inputContainer {
+    margin: 1em 0;
+}
+
+.AddResources_inputContainer input {
+    box-sizing: border-box;
+    padding: 0.5em;
+    margin: 0.5em 0;
+    width: 100%;
+}
